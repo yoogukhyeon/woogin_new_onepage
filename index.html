@@ -36,7 +36,7 @@
        
          .floating {position: fixed;top: 89%; left: 50%; transform: translateX(-50%); display: none}
          .floating.on {opacity: 1}
-         .floating > a {display: block; width: 390px; height: 95px; line-height: 95px; font-size: 42px; font-weight: bold; color: #ffcb4d; background-color: #2d1c6f; text-align: center; margin: 0 auto; border-radius: 47px; border: 1px solid #ffcb4d;}
+         .floating > a {    display: block; width: 290px; height: 75px; line-height: 75px; font-size: 32px; font-weight: bold; color: #ffcb4d; background-color: #2d1c6f; text-align: center;   margin: 0 auto; border-radius: 47px; border: 1px solid #ffcb4d;}
           
          img {width: 100%}
          .review {}
@@ -110,17 +110,17 @@
            </div>
      
 
-           <div class="sec4" style="margin-top: 50px;">
-                <ul class="review clearfix">
-                    <li><a href="https://smartstore.naver.com/sunsweetprune" target="_blank"><img src="./image/review_1.jpg" alt=""></a></li>
-                    <li><a href="https://smartstore.naver.com/sunsweetprune" target="_blank"><img src="./image/review_2.jpg" alt=""></a></li>
-                    <li><a href="https://smartstore.naver.com/sunsweetprune" target="_blank"><img src="./image/review_3.jpg" alt=""></a></li>
-                    <li><a href="https://smartstore.naver.com/sunsweetprune" target="_blank"><img src="./image/review_4.jpg" alt=""></a></li>
-                    <li><a href="https://smartstore.naver.com/sunsweetprune" target="_blank"><img src="./image/review_5.jpg" alt=""></a></li>
-                    <li><a href="https://smartstore.naver.com/sunsweetprune" target="_blank"><img src="./image/review_6.jpg" alt=""></a></li>
-                    <li><a href="https://smartstore.naver.com/sunsweetprune" target="_blank"><img src="./image/review_7.jpg" alt=""></a></li>
-                    <li><a href="https://smartstore.naver.com/sunsweetprune" target="_blank"><img src="./image/review_8.jpg" alt=""></a></li>
-                </ul>
+           <div class="sec4" style="padding-top: 60px;">
+            <ul class="review clearfix">
+                <li><a href="https://blog.naver.com/miffy0902/222279367160" target="_blank"><img src="./image/review_1.jpg" alt=""></a></li>
+                <li><a href="https://blog.naver.com/sinyoung0320/222279579962" target="_blank"><img src="./image/review_2.jpg" alt=""></a></li>
+                <li><a href="https://blog.naver.com/risesb2/222284175184" target="_blank"><img src="./image/review_3.jpg" alt=""></a></li>
+                <li><a href="https://blog.naver.com/cdsworld0301/222281596680" target="_blank"><img src="./image/review_4.jpg" alt=""></a></li>
+                <li><a href="https://blog.naver.com/oneohot/222270780685" target="_blank"><img src="./image/review_5.jpg" alt=""></a></li>
+                <li><a href="https://blog.naver.com/fehaha00/222273123929" target="_blank"><img src="./image/review_6.jpg" alt=""></a></li>
+                <li><a href="https://blog.naver.com/befox2/222285502364" target="_blank"><img src="./image/review_7.jpg" alt=""></a></li>
+                <li><a href="https://blog.naver.com/hecate99/222279004057" target="_blank"><img src="./image/review_8.jpg" alt=""></a></li>
+            </ul>
                
            </div> 
            
@@ -161,7 +161,37 @@
             
         })
         var ScrollTop = $(window).scroll();
+
+        $(window).scroll(function(){
+            var Scroll = $(window).scrollTop();
+            var num = $('#container > div').eq(0).offset().top;
+            var num1 = $('#container > div').eq(1).offset().top -100;
+            var num2 = $('#container > div').eq(2).offset().top -100;
+            var num3 = $('#container > div').eq(3).offset().top -100; 
+            // var num1 = $('#container > div').eq(1).offset().top -500;
+            // var num2 = $('#container > div').eq(2).offset().top -500;
+            // var num3 = $('#container > div').eq(3).offset().top -100;
+    
+            
+            
+            if(Scroll >= num && Scroll <= num1){
+                $('#nav > ul > li').siblings().removeClass('on');
+                $('#nav > ul > li').eq(0).addClass('on');
         
+            }else if(Scroll >= num1 && Scroll < num2){
+                 $('#nav > ul > li').siblings().removeClass('on');
+                 $('#nav > ul > li').eq(1).addClass('on')
+            }else if(Scroll >= num2 && Scroll <= num3 ){
+                 $('#nav > ul > li').siblings().removeClass('on');
+                 $('#nav > ul > li').eq(2).addClass('on')
+            }else if(Scroll >= num3){
+                   $('#nav > ul > li').siblings().removeClass('on');
+                 $('#nav > ul > li').eq(3).addClass('on')
+            }
+
+            
+        
+        });     
         
        $(window).scroll(function(){
            if($(this).scrollTop() >= 200){
